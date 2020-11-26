@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 
+from typing import Text
+
 import os.path
 import os
+import shutil
 import string
 import sys
 
@@ -15,6 +18,11 @@ def _YieldFiles():
   })
 
   yield 'index.html', content
+
+
+def _CopyFiles(dest_dir: Text):
+  dest_path = os.path.join(dest_dir, 'styles')
+  shutil.copytree('styles', dest_path)
 
 
 def _ReadTemplate(filename):
@@ -33,6 +41,8 @@ def main():
     path = os.path.join(out_dir, path)
     with open(path, 'wt') as f:
       f.write(content)
+
+  _CopyFiles(out_dir)
 
 
 if __name__ == '__main__':
