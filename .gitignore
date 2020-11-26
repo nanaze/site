@@ -1,6 +1,9 @@
 # ignore output dir
 out/
 
+# ignore mypy
+.mypy_cache/
+
 # ignore emacs
 *~
 \#*\#
