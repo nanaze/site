@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from typing import Text
+from typing import Iterator, Text, Tuple
 
 import os.path
 import os
@@ -12,7 +12,8 @@ import articles
 import index_page
 
 
-def _YieldFiles():
+def _YieldFiles() -> Iterator[Tuple[Text, Text]]:
+  """Iterates files. Pairs of path and contents."""
   template_str = _ReadTemplate('base.html')
   template = string.Template(template_str)
   content = template.substitute({'content': index_page.MakeIndexPageContent()})
@@ -21,12 +22,13 @@ def _YieldFiles():
 
 
 def _CopyFiles(dest_dir: Text):
+  """Copy static files to their destinations."""
   dest_path = os.path.join(dest_dir, 'styles')
   shutil.copytree('styles', dest_path)
 
 
-def _ReadTemplate(filename):
-  with open(os.path.join('templates', filename)) as f:
+def _ReadTemplate(filename: Text) -> Text:
+  with open(os.path.join('templates', filename), 'rt') as f:
     return f.read()
 
 
