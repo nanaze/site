@@ -11,7 +11,7 @@ def _ReadTemplate(filename: Text) -> Text:
     return f.read()
 
 
-def FillPage(title=None, content=None):
+def FillPage(title: Text = None, content: Text = None) -> Text:
   template_str = _ReadTemplate('base.html')
   template = string.Template(template_str)
 
