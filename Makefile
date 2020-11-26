@@ -9,3 +9,6 @@ site : clean
 
 clean :
 	rm -rf $(OUTPUT_DIR)
+
+mypy:
+	find . -type f -name "*.py" | xargs mypy
