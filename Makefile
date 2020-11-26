@@ -1,6 +1,6 @@
 OUTPUT_DIR = out
 
-site : clean
+site : clean mypy
 	# make output directory
 	mkdir $(OUTPUT_DIR)
 
@@ -11,4 +11,5 @@ clean :
 	rm -rf $(OUTPUT_DIR)
 
 mypy:
+	# Checking Python types with mypy
 	find . -type f -name "*.py" | xargs mypy
