@@ -5,21 +5,23 @@ import os
 import string
 import sys
 
+
 def _YieldFiles():
   template_str = _ReadTemplate('base.html')
   template = string.Template(template_str)
   content = template.substitute({
-    # TODO: actually write content
-    'content' : 'content'
-    })
+      # TODO: actually write content
+      'content': 'content'
+  })
 
   yield 'index.html', content
-  
+
+
 def _ReadTemplate(filename):
   with open(os.path.join('templates', filename)) as f:
     return f.read()
 
-  
+
 def main():
   args = sys.argv[1:]
 
@@ -32,8 +34,6 @@ def main():
     with open(path, 'wt') as f:
       f.write(content)
 
-  
 
-  
 if __name__ == '__main__':
   main()
