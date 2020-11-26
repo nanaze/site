@@ -10,26 +10,20 @@ import sys
 
 import articles
 import index_page
+import page_template
 
 
 def _YieldFiles() -> Iterator[Tuple[Text, Text]]:
   """Iterates files. Pairs of path and contents."""
-  template_str = _ReadTemplate('base.html')
-  template = string.Template(template_str)
-  content = template.substitute({'content': index_page.MakeIndexPageContent()})
 
-  yield 'index.html', content
+  yield 'index.html', page_template.FillPage(
+      title=None, content=index_page.MakeIndexPageContent())
 
 
 def _CopyFiles(dest_dir: Text):
   """Copy static files to their destinations."""
   dest_path = os.path.join(dest_dir, 'styles')
   shutil.copytree('styles', dest_path)
-
-
-def _ReadTemplate(filename: Text) -> Text:
-  with open(os.path.join('templates', filename), 'rt') as f:
-    return f.read()
 
 
 def main():
