@@ -1,9 +1,20 @@
 #!/usr/bin/env python3
 
+import os.path
 import os
 import string
 import sys
 
+def _YieldFiles():
+  template_str = _ReadTemplate('base.html')
+  template = string.Template(template_str)
+  content = template.substitute({
+    # TODO: actually write content
+    'content' : 'content'
+    })
+
+  yield 'index.html', content
+  
 def _ReadTemplate(filename):
   with open(os.path.join('templates', filename)) as f:
     return f.read()
@@ -14,15 +25,14 @@ def main():
 
   assert len(args) == 1, 'Expected one argument, the destination directory'
 
-  template_str = _ReadTemplate('base.html')
-  template = string.Template(template_str)
-  output = template.substitute({
-    # TODO: actually write content
-    'content' : 'content'
-    })
+  out_dir = args[0]
 
-  # TODO: write to output dir
-  print (output)
+  for path, content in _YieldFiles():
+    path = os.path.join(out_dir, path)
+    with open(path, 'wt') as f:
+      f.write(content)
+
+  
 
   
 if __name__ == '__main__':
