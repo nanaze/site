@@ -8,14 +8,14 @@ import shutil
 import string
 import sys
 
+import articles
+import index_page
+
 
 def _YieldFiles():
   template_str = _ReadTemplate('base.html')
   template = string.Template(template_str)
-  content = template.substitute({
-      # TODO: actually write content
-      'content': 'content'
-  })
+  content = template.substitute({'content': index_page.MakeIndexPageContent()})
 
   yield 'index.html', content
 
