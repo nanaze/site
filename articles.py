@@ -11,9 +11,12 @@ class Article:
   content: str
 
 
+_ARTICLES_DIR_PATH = 'content/articles'
+
+
 def LoadArticles():
-  for filename in os.listdir('articles'):
-    full_path = os.path.join('articles', filename)
+  for filename in os.listdir(_ARTICLES_DIR_PATH):
+    full_path = os.path.join(_ARTICLES_DIR_PATH, filename)
     with open(full_path, 'rt') as f:
       content = f.read()
       name, ext = os.path.splitext(filename)
