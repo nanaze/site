@@ -1,8 +1,8 @@
 # nanaze.github.io
 
-Hi. This is a personal website like folks used to have in the halcyon
-days of the web. It includes a longer biography as well as a home for
-longer-form writings.
+Hello. This is a personal website like folks used to have in the
+halcyon days of the web. It includes a longer biography as well as a
+home for longer-form writings.
 
 ## About me
 
