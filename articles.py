@@ -2,19 +2,13 @@ from dataclasses import dataclass
 from typing import Text
 
 import os
-import subprocess
+import markdown
 
 
 @dataclass
 class Article:
   name: str
   content: str
-
-
-def _MarkdownToHtml(markdown_str: Text) -> Text:
-  proc = subprocess.run(['markdown'], input=markdown_str, text=True)
-  proc.check_returncode()
-  return proc.stdout
 
 
 def LoadArticles():
@@ -24,6 +18,6 @@ def LoadArticles():
       content = f.read()
       name, ext = os.path.splitext(filename)
       if ext == '.md':
-        content = _MarkdownToHtml(content)
+        content = markdown.MarkdownToHtml(content)
 
       yield Article(name, content)
