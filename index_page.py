@@ -4,9 +4,11 @@ import io
 
 from typing import Text
 
+
 def _ReadMarkdownContent() -> Text:
   with open('content/index.md', 'rt') as f:
     return markdown.MarkdownToHtml(f.read())
+
 
 def MakeIndexPageContent() -> Text:
   buf = io.StringIO()
