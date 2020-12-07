@@ -16,8 +16,14 @@ import page_template
 def _YieldFiles() -> Iterator[Tuple[Text, Text]]:
   """Iterates files. Pairs of path and contents."""
 
+  articles_list = list(articles.LoadArticles())
+
   yield 'index.html', page_template.FillPage(
-      title=None, content=index_page.MakeIndexPageContent())
+      title=None, content=index_page.MakeIndexPageContent(articles_list))
+
+  for article in articles_list:
+    path = '%s.html' % article.name
+    yield path, page_template.FillPage(content=article.content)
 
 
 def _CopyFiles(dest_dir: Text):
