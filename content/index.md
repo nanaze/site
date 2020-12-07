@@ -15,6 +15,10 @@ school for, oh, decades.
 
 TODO(nanaze): Write.
 
+[Twitter](https://twitter.com/nanaze) &#8226;
+[GitHub](https://github.com/nanaze) &#8226;
+[Facebook](https://facebook.com/nathan.naze)
+
 ## Writings
 
 I used to write in small personal blogs. Early on, especially when
