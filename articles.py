@@ -13,6 +13,8 @@ class Article:
 
 _ARTICLES_DIR_PATH = 'content/articles'
 
+_EXTENSIONS = frozenset(['.md', '.html'])
+
 
 def LoadArticles():
   for filename in os.listdir(_ARTICLES_DIR_PATH):
@@ -20,6 +22,11 @@ def LoadArticles():
     with open(full_path, 'rt') as f:
       content = f.read()
       name, ext = os.path.splitext(filename)
+
+      # ignore emacs temp files etc
+      if ext not in _EXTENSIONS:
+        continue
+
       if ext == '.md':
         content = markdown.MarkdownToHtml(content)
 
