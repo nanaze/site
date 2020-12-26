@@ -10,7 +10,7 @@ def _ReadMarkdownContent() -> Text:
     return markdown.MarkdownToHtml(f.read())
 
 
-def MakeIndexPageContent(article_list : Iterable[articles.Article]) -> Text:
+def MakeIndexPageContent(article_list: Iterable[articles.Article]) -> Text:
   buf = io.StringIO()
   buf.write(_ReadMarkdownContent())
   buf.write('<ul>\n')
