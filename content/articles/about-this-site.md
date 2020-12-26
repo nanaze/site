@@ -1,3 +1,5 @@
+# About this site
+
 I used to write in small personal blogs. Early on, especially when
 blogging was novel, I'd run custom scripts to run these sites &#8212;
 my career path was shaped early on from the autodidactic experience of
