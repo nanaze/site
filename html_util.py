@@ -3,7 +3,11 @@ import html.parser
 from typing import Optional, Text
 
 
-def ParseTag(content: Text, parsed_tag) -> Optional[Text]:
+def ParseTag(content: Text, parsed_tag: Text) -> Optional[Text]:
+  """Parse the given HTML content for the given tag.
+
+  Gives the content of the given tag (first, if multiple), if any.
+  """
 
   contents = []
 
