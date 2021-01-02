@@ -25,3 +25,5 @@ def ParseTag(content: Text, parsed_tag: Text) -> Optional[Text]:
 
   if contents:
     return contents[0]
+
+  return None
