@@ -3,17 +3,28 @@ from typing import Text
 
 import os
 import markdown
+import html_util
 
 
 @dataclass
 class Article:
   name: str
+  title: str
   content: str
 
 
 _ARTICLES_DIR_PATH = 'content/articles'
 
 _EXTENSIONS = frozenset(['.md', '.html'])
+
+
+def _ParseTitle(html_content: Text) -> Text:
+  for tag in ['title', 'h1']:
+    title = html_util.ParseTag(html_content, tag)
+    if title:
+      return title
+
+  raise AssertionError('Could not find title')
 
 
 def LoadArticles():
@@ -30,4 +41,4 @@ def LoadArticles():
       if ext == '.md':
         content = markdown.MarkdownToHtml(content)
 
-      yield Article(name, content)
+      yield Article(name, _ParseTitle(content), content)

@@ -15,8 +15,7 @@ def MakeIndexPageContent(article_list: Iterable[articles.Article]) -> Text:
   buf.write(_ReadMarkdownContent())
   buf.write('<ul>\n')
   for article in article_list:
-    name = article.name
-    path = '%s.html' % name
-    buf.write('<li><a href="%s">%s</a></li>' % (path, name))
+    path = '%s.html' % article.name
+    buf.write('<li><a href="%s">%s</a></li>' % (path, article.title))
   buf.write('</ul>\n')
   return buf.getvalue()
