@@ -11,3 +11,6 @@ out/
 
 # ignore pyc files
 *\.pyc
+
+# ignore virtual python environment
+.venv/
