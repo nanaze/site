@@ -10,20 +10,18 @@ You must do the following things:
 * Install `xrdp` and everything with `apt`, etc.
 * Configure the correct window manager to run. I did this by editing `~/.xsession` to look like this: 
   
-  ```
-  xsetroot -solid gray
-  exec xfce4-session
-  ```
+        xsetroot -solid gray
+        exec xfce4-session
   
-  (Obviously I'm using [xfce](http://xfce.org)).
+    (Obviously I'm using [xfce](http://xfce.org)).
 
 * I'm connecting from a Windows machine, so using [Remote Desktop Connection](https://www.microsoft.com/en-us/p/microsoft-remote-desktop/9wzdncrfj3ps).
 
-  Oddly, the middle mouse button (three fingers) from the Windows machine didn't work, so I monitored X input using `xev`. The mouse click showed up as a keypress, which I just remapped in a script. `117` was the keycode I was seeing from `xev`.
+    Oddly, the middle mouse button (three fingers) from the Windows machine didn't work, so I monitored X input using `xev`. The mouse click showed up as a keypress, which I just remapped in a script. `117` was the keycode I was seeing from `xev`.
   
-    xkbset m  
-    xkbset exp =m  
-    xmodmap -e "keycode 117 = Pointer_Button2"
+        xkbset m  
+        xkbset exp =m  
+        xmodmap -e "keycode 117 = Pointer_Button2"
 
 This is probably deserving of more details — if you see this and have feedback, [tweet at me](http://twitter.com/nanaze), I guess. I just want to get this down somewhere so it comes up in a web search.
 
