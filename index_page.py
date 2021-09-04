@@ -7,7 +7,7 @@ from typing import Iterable, Text
 
 def _ReadMarkdownContent() -> Text:
   with open('content/index.md', 'rt') as f:
-    return markdown.MarkdownToHtml(f.read())
+    return markdown.markdown(f.read())
 
 
 def MakeIndexPageContent(article_list: Iterable[articles.Article]) -> Text:

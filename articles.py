@@ -39,6 +39,6 @@ def LoadArticles():
         continue
 
       if ext == '.md':
-        content = markdown.MarkdownToHtml(content)
+        content = markdown.markdown(content)
 
       yield Article(name, _ParseTitle(content), content)
