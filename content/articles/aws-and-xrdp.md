@@ -20,12 +20,10 @@ You must do the following things:
 * I'm connecting from a Windows machine, so using [Remote Desktop Connection](https://www.microsoft.com/en-us/p/microsoft-remote-desktop/9wzdncrfj3ps).
 
   Oddly, the middle mouse button (three fingers) from the Windows machine didn't work, so I monitored X input using `xev`. The mouse click showed up as a keypress, which I just remapped in a script. `117` was the keycode I was seeing from `xev`.
-
-  ```
-  xkbset m
-  xkbset exp =m
-  xmodmap -e "keycode 117 = Pointer_Button2"
-  ```
+  
+    xkbset m  
+    xkbset exp =m  
+    xmodmap -e "keycode 117 = Pointer_Button2"
 
 This is probably deserving of more details — if you see this and have feedback, [tweet at me](http://twitter.com/nanaze), I guess. I just want to get this down somewhere so it comes up in a web search.
 
