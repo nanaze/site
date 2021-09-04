@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from typing import Text
 
 import os
-import markdown
+import markdown_util
 import html_util
 
 
@@ -39,6 +39,6 @@ def LoadArticles():
         continue
 
       if ext == '.md':
-        content = markdown.markdown(content)
+        content = markdown_util.to_html(content)
 
       yield Article(name, _ParseTitle(content), content)

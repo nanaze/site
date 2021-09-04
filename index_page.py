@@ -1,5 +1,5 @@
 import articles
-import markdown
+import markdown_util
 import io
 
 from typing import Iterable, Text
@@ -7,7 +7,7 @@ from typing import Iterable, Text
 
 def _ReadMarkdownContent() -> Text:
   with open('content/index.md', 'rt') as f:
-    return markdown.markdown(f.read())
+    return markdown_util.to_html(f.read())
 
 
 def MakeIndexPageContent(article_list: Iterable[articles.Article]) -> Text:
