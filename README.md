@@ -7,3 +7,10 @@ $ make site
 ```
 
 The site will be written out to the `out/` directory.
+
+## Pushing to nanaze.github.io
+
+```shell
+$ make push_site
+```
+
