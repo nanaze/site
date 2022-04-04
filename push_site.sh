@@ -7,5 +7,5 @@ git init
 git add .
 git commit -m 'set content'
 git remote add origin git@github.com:nanaze/nanaze.github.io.git
-git push --set-upstream origin master --force
+git push --set-upstream origin main --force
 
