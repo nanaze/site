@@ -13,7 +13,14 @@ school for, oh, decades.
 
 ## About me
 
-TODO(nanaze): Write.
+I live in an old house in Berkeley, California with my wife (an environmental
+lawyer), two young children, and a Roomba. I grew up in Wisconsin, went to
+school in Madison, and have lived in the Bay Area and New York City.
+
+Since 2005 I've been employeed at Google as a software engineer and technical
+lead. In recent years, I've been working on frontend infrastructure for Google
+Search. Previously, I've worked on the Google Android app, Closure Library,
+Google Books, and other projects.
 
 [Twitter](https://twitter.com/nanaze) &#8226;
 [GitHub](https://github.com/nanaze) &#8226;
