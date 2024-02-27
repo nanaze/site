@@ -1,7 +1,7 @@
 import os
 import string
 
-from typing import Text
+from typing import Optional, Text
 
 _SITE_NAME = 'nanaze.github.io'
 
@@ -11,7 +11,7 @@ def _ReadTemplate(filename: Text) -> Text:
     return f.read()
 
 
-def FillPage(title: Text = None, content: Text = None) -> Text:
+def FillPage(title: Optional[Text] = None, content: Optional[Text] = None) -> Text:
   template_str = _ReadTemplate('base.html')
   template = string.Template(template_str)
 
